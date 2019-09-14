@@ -8,39 +8,9 @@
   grid-template-columns: 2fr 10fr;
 }
 
-.header {
-  grid-area: h;
-  background-color: #9bf4cf;
-}
-
-.nav{
-  grid-area: n;
-  background-color: #0d9556;
-  height: 100%;
-  text-align: center;
-  font-size:24px;
-}
-
-.nav div a div {
-  margin: 10px;
-  border-radius: 50px;
-}
-
-.nav div a div:hover {
-  box-shadow:
-          0 2px 2px rgba(0,0,0,.1),
-          0 4px 4px rgba(0,0,0,.1),
-          0 8px 8px rgba(0,0,0,.1),
-          0 16px 16px rgba(0,0,0,.1);
-}
-
-.content{
-  grid-area: c;
-  background-color: #2e8fa9;
-}
 
 img {
-  width: 80px;
+  width: 100%;
 }
 
 a {
