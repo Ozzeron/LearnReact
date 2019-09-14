@@ -15,7 +15,7 @@
 
 .nav{
   grid-area: n;
-  background-color: #959263;
+  background-color: #0d9556;
   height: 100%;
   text-align: center;
   font-size:24px;
@@ -23,25 +23,24 @@
 
 .nav div a div {
   margin: 10px;
-}
-.nav div:hover{
-  background-color: darkolivegreen;
+  border-radius: 50px;
 }
 
-
+.nav div a div:hover {
+  box-shadow:
+          0 2px 2px rgba(0,0,0,.1),
+          0 4px 4px rgba(0,0,0,.1),
+          0 8px 8px rgba(0,0,0,.1),
+          0 16px 16px rgba(0,0,0,.1);
+}
 
 .content{
   grid-area: c;
   background-color: #2e8fa9;
 }
 
-.header img {
+img {
   width: 80px;
-}
-
-.content img{
-  height: 200px;
-  width: 100%;
 }
 
 a {
