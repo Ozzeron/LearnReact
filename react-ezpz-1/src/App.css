@@ -1,20 +1,25 @@
 .app-wrapper {
-  margin: 0 auto;
-  display: grid;
-  width: 1200px;
-  grid-template-areas: 'h h'
-    'n c';
-  grid-template-rows:  60px 1fr;
-  grid-template-columns: 2fr 10fr;
+    margin: 0 auto;
+    display: grid;
+    width: 1200px;
+    grid-template-areas: 'h h' 'n c';
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
 }
 
-
 img {
-  width: 100%;
+    width: 100%;
 }
 
 a {
-  color: beige;
-  text-decoration: none;
+    color: beige;
+    text-decoration: none;
 }
+
+.content {
+    grid-area: c;
+    background-color: #2e8fa9;
+}
+
+
 
