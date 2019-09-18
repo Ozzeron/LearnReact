@@ -6,17 +6,17 @@ const Navbar = () => {
     return (
         <nav className={classes.nav}>
             <div className={classes.item}>
-                <NavLink to="/Profile" activeClassName={classes.activeLink}>
+                <NavLink to="/profile" activeClassName={classes.activeLink}>
                     <div>Profile</div>
                 </NavLink>
             </div>
-            <div cclassName={classes.item}>
-                <NavLink to="/Dialogs" activeClassName={classes.activeLink}>
+            <div className={classes.item}>
+                <NavLink to="/dialogs" activeClassName={classes.activeLink}>
                     <div>Messages</div>
                 </NavLink>
             </div>
             <div className={classes.item}>
-                <NavLink to="/News" activeClassName={classes.activeLink}>
+                <NavLink to="/news" activeClassName={classes.activeLink}>
                     <div>News</div>
                 </NavLink>
             </div>
