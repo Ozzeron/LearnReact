@@ -1,0 +1,15 @@
+.active {
+    color: gold;
+}
+
+.dialogs{
+    padding: 10px;
+}
+
+.dialogs a {
+    color: white;
+}
+
+a.activeLink {
+    color: gold;
+}

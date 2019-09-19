@@ -1,12 +1,11 @@
 import React from 'react';
 import dialogStyles from './Dialogs.module.css';
 import DialogItem from "./DialogsItem/DialogItem";
+import Message from "./DialogsMessages/Message";
 
 
 
-const Message = (props) => {
-    return <div className={dialogStyles.messages}>{props.message}</div>;
-};
+
 
 const Dialogs = (props) => {
     let dialogs = [

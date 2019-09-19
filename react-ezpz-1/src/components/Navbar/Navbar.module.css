@@ -22,3 +22,7 @@
 .nav a.activeLink {
     color: gold;
 }
+
+.nav a {
+    color: white;
+}
