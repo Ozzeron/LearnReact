@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import Friends from "./Friends/Friends";
 
 const Navbar = (props) => {
-    let friendsData = props.state.friends.map(f=><Friends friends={f}/>);
+    let friendsData = props.state.friends.map(f => <Friends friends={f}/>);
     return (
         <nav className={classes.nav}>
             <div className={classes.item}>
@@ -32,8 +32,13 @@ const Navbar = (props) => {
                     <div>Settings</div>
                 </NavLink>
             </div>
-            <div>
-                {friendsData}
+            <div className={classes.friendBlock}>
+                <div className={classes.FriendTitle}>
+                    Friends
+                </div>
+                <div className={classes.friendsContent}>
+                    {friendsData}
+                </div>
             </div>
         </nav>
     );

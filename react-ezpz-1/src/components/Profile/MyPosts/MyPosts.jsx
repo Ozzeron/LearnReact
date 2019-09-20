@@ -9,8 +9,7 @@ const MyPosts = (props) => {
             <div>
                 <textarea name="text" id="text" cols="30" rows="10"></textarea>
                 <div className={profiles.buttons}>
-                    <button className="button" onClick={addPost}>Add post</button>
-                    <button className="button">Remove</button>
+                    <button className="button" onClick={()=>{alert('hei')}}>Add post</button>
                 </div>
             </div>
             <div id='posts'>
@@ -19,10 +18,5 @@ const MyPosts = (props) => {
         </div>
     );
 };
-
-function addPost() {
-    let text = document.getElementById('text').value;
-    console.log(text);
-}
 
 export default MyPosts;

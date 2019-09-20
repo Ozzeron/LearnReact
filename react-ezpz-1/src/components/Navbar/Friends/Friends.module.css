@@ -1,0 +1,13 @@
+.friendBlock img {
+    width:60px;
+    border-radius: 50px;
+}
+
+.friendName{
+    font-size: 12px;
+    color: white;
+}
+
+.friendBlock{
+    padding: 5px;
+}

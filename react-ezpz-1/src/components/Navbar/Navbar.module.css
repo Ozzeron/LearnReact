@@ -1,9 +1,9 @@
-.nav{
+.nav {
     grid-area: n;
     background-color: #0d9556;
     height: 100%;
     text-align: center;
-    font-size:24px;
+    font-size: 24px;
 }
 
 .nav div a div {
@@ -12,11 +12,10 @@
 }
 
 .nav div a div:hover {
-    box-shadow:
-            0 2px 2px rgba(0,0,0,.1),
-            0 4px 4px rgba(0,0,0,.1),
-            0 8px 8px rgba(0,0,0,.1),
-            0 16px 16px rgba(0,0,0,.1);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .1),
+    0 4px 4px rgba(0, 0, 0, .1),
+    0 8px 8px rgba(0, 0, 0, .1),
+    0 16px 16px rgba(0, 0, 0, .1);
 }
 
 .nav a.activeLink {
@@ -26,3 +25,15 @@
 .nav a {
     color: white;
 }
+
+.friendsContent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FriendTitle {
+    font-size: 35px;
+    color: white;
+    margin-top: 75px;
+}
+
