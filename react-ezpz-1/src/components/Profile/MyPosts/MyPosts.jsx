@@ -9,9 +9,8 @@ const MyPosts = (props) => {
 
     let addPost = ()=> {
       let text = newPostElement.current.value;
-      console.log(text);
+      props.addPost(text);
     };
-
     return (<div className={profiles.posts} id='MyPosts'>
             my posts
             <div>
