@@ -3,13 +3,14 @@ import profiles from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-    let postsData = props.posts.map(p=><Post message={p.message} likesCount={p.likesCount}/>);
+    let postsData = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
 
     let newPostElement = React.createRef();
 
-    let addPost = ()=> {
-      let text = newPostElement.current.value;
-      props.addPost(text);
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+        newPostElement.current.value = '';
     };
     return (<div className={profiles.posts} id='MyPosts'>
             my posts
