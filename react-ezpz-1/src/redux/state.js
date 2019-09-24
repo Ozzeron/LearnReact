@@ -7,6 +7,7 @@ let state = {
             {id: 1, message: 'Hi, how are you', likesCount: 15},
             {id: 2, message: "It\'s my first post", likesCount: 2}
         ],
+        newPostText: 'it-kamasutra.com'
     },
     dialogsPage:{
         dialogs: [
@@ -42,6 +43,11 @@ export let addPost = (postMessage) =>{
         likesCount: 0
     };
     state.profilePage.posts.push(newPost);
+    renderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) =>{
+    state.profilePage.newPostText = newText;
     renderEntireTree(state);
 };
 
