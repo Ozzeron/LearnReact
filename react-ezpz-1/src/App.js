@@ -18,8 +18,7 @@ const App = (props) => {
                 <Route path='/dialogs'
                        render={() => <Dialogs
                            state={props.state.dialogsPage}
-                           updateNewMessageText={props.updateNewMessageText}
-                           addMessage={props.addMessage}/>}/>
+                           dispatch={props.dispatch}/>}/>
                 <Route path='/profile'
                        render={() => <Profile
                            dispatch={props.dispatch}
