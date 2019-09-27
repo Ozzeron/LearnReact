@@ -1,9 +1,9 @@
-let renderEntireTree = () =>{
+let renderEntireTree = () => {
     console.log('something has been changed')
 };
 
 let store = {
-    _state:{
+    _state: {
         profilePage: {
             posts: [
                 {id: 1, message: 'Hi, how are you', likesCount: 15},
@@ -60,28 +60,21 @@ let store = {
             ]
         }
     },
-    getState(){
+    _callSubscriber() {
+        console.log('something has been changed')
+    },
+
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
+    getState() {
         return this._state;
     },
-    updateNewPostText(newText){
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addPost(){
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewMessageText(newTextMessage){
+    updateNewMessageText(newTextMessage) {
         this._state.dialogsPage.newMessageText = newTextMessage;
         this._callSubscriber(this._state);
     },
-    addMessage(){
+    addMessage() {
         let newMessage = {
             id: 1,
             message: this._state.dialogsPage.newMessageText
@@ -90,11 +83,20 @@ let store = {
         this._state.dialogsPage.newMessageText = '';
         this._callSubscriber(this._state);
     },
-    _callSubscriber(){
-        console.log('something has been changed')
-    },
-    subscribe(observer){
-        this._callSubscriber = observer;
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likesCount: 0
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.text;
+            this._callSubscriber(this._state);
+        }
     }
 };
 
