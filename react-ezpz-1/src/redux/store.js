@@ -2,9 +2,6 @@ import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
-let renderEntireTree = () => {
-    console.log('something has been changed')
-};
 
 let store = {
     _state: {
