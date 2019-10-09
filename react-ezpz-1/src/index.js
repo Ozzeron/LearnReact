@@ -6,10 +6,10 @@ import {BrowserRouter} from "react-router-dom";
 import App from "./App";
 
 
- let renderEntireTree = (state) => {
+let renderEntireTree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state} dispatch={store.dispatch.bind(store)}/>
+            <App store={store} state={state} dispatch={store.dispatch.bind(store)}/>
         </BrowserRouter>, document.getElementById('root'));
 };
 
@@ -19,6 +19,7 @@ store.subscribe(() =>{
     let state = store.getState();
     renderEntireTree(state);
 });
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
