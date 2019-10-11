@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import Friends from "./Friends/Friends";
 
 const Navbar = (props) => {
-    let friendsData = props.state.friends.map(f => <Friends friends={f}/>);
+    let friendsData = props.friends.map(f => <Friends friends={f}/>);
     return (
         <nav className={classes.nav}>
             <div className={classes.item}>
