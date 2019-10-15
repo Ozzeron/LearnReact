@@ -1,18 +1,13 @@
 import React from 'react';
 import Navbar from "./Navbar";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
-const NavbarContainer = () => {
-    return (
-        <StoreContext.Consumer>
-            {
-                store => {
-                    let state = store.getState();
-                    return <Navbar friends={state.sidebar.friends}/>
-                }
-            }
-        </StoreContext.Consumer>
-    )
+const mapStateToProps = (state)=>{
+    return {
+        friends: state.sidebar.friends
+    }
 };
+
+const NavbarContainer = connect(mapStateToProps)(Navbar);
 
 export default NavbarContainer;
