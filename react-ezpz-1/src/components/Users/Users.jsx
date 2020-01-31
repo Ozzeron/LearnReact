@@ -1,36 +1,17 @@
 import React from 'react';
 import styles from './users.module.css';
+import * as axios from 'axios';
 
 let Users = (props) => {
-    if (props.users.length == 0) {
-        props.setUsers(
-            [
-                {
-                    id: 1,
-                    photoUrl: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/24/2443446041852c9c98ae806b3e37d768500745bd_full.jpg',
-                    followed: false,
-                    fullName: 'Dmitry',
-                    status: 'I am a boss',
-                    location: {city: 'Minsk', country: 'Belarus'}
-                },
-                {
-                    id: 2,
-                    photoUrl: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/24/2443446041852c9c98ae806b3e37d768500745bd_full.jpg',
-                    followed: false,
-                    fullName: 'Sasha',
-                    status: 'I am a boss too',
-                    location: {city: 'Kiyiv', country: 'Ukraine'}
-                },
-                {
-                    id: 3,
-                    photoUrl: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/24/2443446041852c9c98ae806b3e37d768500745bd_full.jpg',
-                    followed: true,
-                    fullName: 'Andrew',
-                    status: 'I am a boss too',
-                    location: {city: 'Paris', country: 'France'}
-                }]
-        );
+    if (props.users.length === 0) {
+
+        axios.get('http://localhost:4000/users').then(response =>{
+            debugger;
+        });
+
+
     }
+
 
 
     return <div>
