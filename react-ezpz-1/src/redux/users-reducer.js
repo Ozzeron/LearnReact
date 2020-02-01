@@ -7,14 +7,13 @@ let initialState = {
     ],
     newPostText: '',
 };
-
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u.id === action.userId) {
+                    if (u._id=== action.userId) {
                         return {...u, followed: true}
                     }
                     return u;
@@ -24,7 +23,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u.id === action.userId) {
+                    if (u._id=== action.userId) {
                         return {...u, followed: false}
                     }
                     return u;
