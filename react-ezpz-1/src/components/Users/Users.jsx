@@ -9,11 +9,18 @@ class Users extends React.Component {
             this.props.setUsers(response.data)
         });
     }
-
-render() {
-    return <div>
-        {
-            this.props.users.map(u => <div key={u._id}>
+cu
+    render() {
+        return <div>
+            <div>
+               <span>1</span>
+               <span className={styles.selectedPage}>2</span>
+               <span>3</span>
+               <span>4</span>
+               <span>5</span>
+            </div>
+            {
+                this.props.users.map(u => <div key={u._id}>
               <span>
                 <div>
                     <img src={u.photoUrl ? u.photoUrl : userPhoto} className={styles.userPhoto} alt=""/>
@@ -26,19 +33,20 @@ render() {
                       }}>Follow</button>}
                   </div>
               </span>
-                <span>
+                    <span>
                     <div>{u.fullName}</div>
                     <div>{u.status}</div>
                 </span>
-                <span>
+                    <span>
                     <div>{u.location.country}</div>
                     <div>{u.location.city}</div>
 
                     <div></div>
                     </span>
-            </div>)
-        }
-    </div>
-}}
+                </div>)
+            }
+        </div>
+    }
+}
 
 export default Users;

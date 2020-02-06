@@ -4,13 +4,22 @@ const User = require('../models/User');
 
 router.get('/', async (req, res) => {
     try {
+        const page = req.query.page;
+        const count = req.query.count;
         const users = await User.find();
-        res.json(users);
-    }catch (e) {
+        const responseUsers = {
+            "items": users,
+            "totalCount": users.length
+        };
+        const startIndex = (page - 1) * count;
+        const endIndex = page * count;
+
+        const resultUsers = responseUsers.items.slice(startIndex, endIndex);
+         (page!==undefined || count!==undefined)?res.json(resultUsers):res.json(responseUsers.items.slice(0,10));
+    } catch (e) {
         res.json({message: e})
     }
 });
-
 
 
 module.exports = router;
