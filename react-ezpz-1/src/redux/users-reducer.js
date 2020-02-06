@@ -3,9 +3,10 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
-    ],
-    newPostText: '',
+    users: [],
+    pageSize: 4,
+    totalUsersCount: 20,
+    currentPage: 1
 };
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -13,7 +14,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u._id=== action.userId) {
+                    if (u._id === action.userId) {
                         return {...u, followed: true}
                     }
                     return u;
@@ -23,14 +24,14 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u._id=== action.userId) {
+                    if (u._id === action.userId) {
                         return {...u, followed: false}
                     }
                     return u;
                 })
             };
         case SET_USERS: {
-            return {...state, users: [...state.users, ...action.users]}
+            return {...state, users: [...state.users, ...action.users.items]}
         }
         default:
             return state;
@@ -38,21 +39,16 @@ const usersReducer = (state = initialState, action) => {
     return state;
 };
 
-export const followAC = (userId) => {
-    return {
-        type: FOLLOW, userId
-    }
-};
+export const followAC = (userId) => ({
+    type: FOLLOW, userId
+});
 
-export const unfollowAC = (userId) => {
-    return {
-        type: UNFOLLOW, userId
-    }
-};
+export const unfollowAC = (userId) => ({
+    type: UNFOLLOW, userId
+});
 
 export const setUsersAC = (users) => ({
-        type: SET_USERS, users
-    })
-;
+    type: SET_USERS, users
+});
 
 export default usersReducer;

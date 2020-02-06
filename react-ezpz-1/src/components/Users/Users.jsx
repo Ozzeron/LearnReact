@@ -5,19 +5,24 @@ import userPhoto from '../../assets/images/user.png';
 
 class Users extends React.Component {
     componentDidMount() {
-        axios.get('http://localhost:4000/users').then(response => {
+        axios.get(`http://localhost:4000/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
             this.props.setUsers(response.data)
         });
     }
-cu
+
     render() {
+
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+        let pagination = [];
+        for (let i = 1; i <= pagesCount; i++) {
+            pagination.push(i);
+        }
         return <div>
             <div>
-               <span>1</span>
-               <span className={styles.selectedPage}>2</span>
-               <span>3</span>
-               <span>4</span>
-               <span>5</span>
+                {pagination.map(p => {
+                    return <span className={this.props.currentPage === p && styles.selectedPage}>{p}</span>
+                })}
             </div>
             {
                 this.props.users.map(u => <div key={u._id}>
