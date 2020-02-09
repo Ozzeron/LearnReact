@@ -29,7 +29,7 @@ mongoose.connect(
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000/users");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.send('we are on \'\/\' ');
 });

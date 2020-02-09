@@ -7,3 +7,12 @@
 .selectedPage {
     font-weight: bold;
 }
+
+.pagination{
+    cursor: pointer;
+    padding: 3px;
+}
+
+.pagination>span{
+    padding: 5px;
+}
