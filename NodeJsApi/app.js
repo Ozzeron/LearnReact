@@ -12,9 +12,11 @@ app.use(bodyParser.json());
 //Import Routes
 const postsRoute = require('./routes/posts');
 const usersRoute = require('./routes/users');
+const profilesRoute = require('./routes/profiles');
 
 app.use('/posts', postsRoute);
 app.use('/users', usersRoute);
+app.use('/profiles', profilesRoute);
 
 //db connection
 mongoose.connect(
@@ -33,6 +35,9 @@ app.get('/', (req, res) => {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.send('we are on \'\/\' ');
 });
+
+
+
 
 // Listening the server
 app.listen(4000, () => {
