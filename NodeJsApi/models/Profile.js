@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 //
 const ProfileSchema = mongoose.Schema({
-    "name": String
+    "id": Number,
+    "name": String,
+    "phoneNumber": Number,
+    "lookingForAJob": Boolean
 });
 
 module.exports = mongoose.model('Profile', ProfileSchema);

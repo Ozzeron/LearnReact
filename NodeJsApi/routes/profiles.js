@@ -12,5 +12,14 @@ router.get('/', async (req,res)=>{
    }
 });
 
+router.get('/:id', async (req,res)=>{
+   try {
+       const someProfile = await Profile.find({"id": req.params.id});
+       res.json({message: someProfile})
+   } catch (e) {
+       res.json({message:e})
+   }
+});
+
 
 module.exports = router;
