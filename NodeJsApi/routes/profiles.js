@@ -15,7 +15,7 @@ router.get('/', async (req,res)=>{
 router.get('/:id', async (req,res)=>{
    try {
        const someProfile = await Profile.find({"id": req.params.id});
-       res.json({message: someProfile})
+       res.json(someProfile[0])
    } catch (e) {
        res.json({message:e})
    }
