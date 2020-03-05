@@ -13,10 +13,12 @@ app.use(bodyParser.json());
 const postsRoute = require('./routes/posts');
 const usersRoute = require('./routes/users');
 const profilesRoute = require('./routes/profiles');
+const authRouter = require('./routes/auth');
 
 app.use('/posts', postsRoute);
 app.use('/users', usersRoute);
 app.use('/profiles', profilesRoute);
+app.use('/auth', authRouter);
 
 //db connection
 mongoose.connect(
