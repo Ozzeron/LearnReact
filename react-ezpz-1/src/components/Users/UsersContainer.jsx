@@ -15,7 +15,7 @@ import Preloader from "../common/Preloader/Preloader";
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.ToggleIsFetching(true);
-        axios.get(`http://localhost:4000/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+        axios.get(`https://react-node-js-learning.herokuapp.com/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
             this.props.ToggleIsFetching(false);
             this.props.setUsers(response.data);
             this.props.setUsersTotalCount(response.data.totalCount)
@@ -26,7 +26,7 @@ class UsersContainer extends React.Component {
         this.props.ToggleIsFetching(true);
         this.props.setCurrentPage(pageNumber);
         setTimeout(() => {
-            axios.get(`http://localhost:4000/users?page=${pageNumber}&count=${this.props.pageSize}`)
+            axios.get(`https://react-node-js-learning.herokuapp.com/users?page=${pageNumber}&count=${this.props.pageSize}`)
                 .then(response => {
                     this.props.ToggleIsFetching(false);
                     this.props.setUsers(response.data)

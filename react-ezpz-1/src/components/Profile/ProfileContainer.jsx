@@ -12,7 +12,7 @@ class ProfileContainer extends React.Component {
         if(!id){
             id = 2;
         }
-        axios.get(`http://localhost:4000/profiles/${id}`)
+        axios.get(`https://react-node-js-learning.herokuapp.com/profiles/${id}`)
             .then(response => {
                 this.props.setUserProfile(response.data)
             });

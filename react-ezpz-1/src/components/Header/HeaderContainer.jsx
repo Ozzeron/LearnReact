@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 
 class HeaderContainer extends React.Component {
     componentDidMount() {
-        axios.get(`http://localhost:4000/auth`,{
+        axios.get(`https://react-node-js-learning.herokuapp.com/auth`,{
             withCredentials: true
         }).then(response => {
             if (response.data.resultCode === 0){
