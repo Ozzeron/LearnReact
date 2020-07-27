@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "./users.module.css";
-import userPhoto from '../../assets/images/user.png';
 import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
@@ -25,7 +24,7 @@ let Users = (props) => {
               <span>
                 <div>
                     <NavLink to={'/profile/'+ u.id}>
-                    <img src={u.photoUrl ? u.photoUrl : userPhoto} className={styles.userPhoto} alt=""/>
+                    <img src={u.photoUrl ? u.photoUrl : '/images/user.png'} className={styles.userPhoto} alt=""/>
                     </NavLink>
                 </div>
                   <div>

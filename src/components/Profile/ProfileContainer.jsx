@@ -5,6 +5,7 @@ import * as axios from "axios";
 import {setUserProfile} from "../../redux/profile-reducer";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
+import Urls from '../../urlsForApiRequests'
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
@@ -12,7 +13,7 @@ class ProfileContainer extends React.Component {
         if(!id){
             id = 2;
         }
-        axios.get(`https://react-node-js-learning.herokuapp.com/profiles/${id}`)
+        axios.get(`${Urls}/profiles/${id}`)
             .then(response => {
                 this.props.setUserProfile(response.data)
             });

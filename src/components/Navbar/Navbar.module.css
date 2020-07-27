@@ -13,13 +13,16 @@ a {
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
-    transition: background-position 275ms ease;
+    transition: background-position 400ms ease;
 }
 
 a:hover {
     background-position: 0 100%;
 }
 
+.nav div a {
+    width: 100%;
+}
 
 
 .nav {
@@ -31,9 +34,9 @@ a:hover {
 }
 
 .nav div a div {
-    margin: 10px;
+    margin: 5px;
     border-radius: 50px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .nav div a div:hover {
