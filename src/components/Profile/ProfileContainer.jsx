@@ -13,7 +13,7 @@ class ProfileContainer extends React.Component {
         if(!id){
             id = 2;
         }
-        axios.get(`${Urls}/profiles/${id}`)
+        axios.get(`${Urls}/profile/${id}`)
             .then(response => {
                 this.props.setUserProfile(response.data)
             });

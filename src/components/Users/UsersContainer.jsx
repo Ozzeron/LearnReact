@@ -2,20 +2,23 @@ import React from 'react';
 import {connect} from "react-redux";
 import {
     follow,
-    setCurrentPage,
+    setCurrentPage, SetPaginationRange,
     setUsers,
     setUsersTotalCount,
     ToggleIsFetching,
-    unfollow
+    unfollow,
+
 } from "../../redux/users-reducer";
 import * as axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
+import Urls from "../../urlsForApiRequests";
+
 
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.ToggleIsFetching(true);
-        axios.get(`https://react-node-js-learning.herokuapp.com/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+        axios.get(`${Urls}/users?count=${this.props.pageSize}&page=${this.props.currentPage}`).then(response => {
             this.props.ToggleIsFetching(false);
             this.props.setUsers(response.data);
             this.props.setUsersTotalCount(response.data.totalCount)
@@ -26,7 +29,7 @@ class UsersContainer extends React.Component {
         this.props.ToggleIsFetching(true);
         this.props.setCurrentPage(pageNumber);
         setTimeout(() => {
-            axios.get(`https://react-node-js-learning.herokuapp.com/users?page=${pageNumber}&count=${this.props.pageSize}`)
+            axios.get(`${Urls}/users?count=${this.props.pageSize}&page=${pageNumber}`)
                 .then(response => {
                     this.props.ToggleIsFetching(false);
                     this.props.setUsers(response.data)
@@ -56,7 +59,8 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        paginationRange: state.usersPage.paginationRange
     }
 };
 
@@ -85,4 +89,4 @@ let mapStateToProps = (state) => {
 // };
 
 export default connect(mapStateToProps,
-    {follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, ToggleIsFetching})(UsersContainer);
+    {follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, ToggleIsFetching, SetPaginationRange})(UsersContainer);

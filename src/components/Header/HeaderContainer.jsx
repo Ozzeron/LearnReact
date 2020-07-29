@@ -6,9 +6,8 @@ import {connect} from "react-redux";
 import Urls from '../../urlsForApiRequests'
 
 class HeaderContainer extends React.Component {
-    de
     componentDidMount() {
-        axios.get(`${Urls}/auth`,{
+        axios.get(`${Urls}/auth/me`,{
             withCredentials: true
         }).then(response => {
             if (response.data.resultCode === 0){
