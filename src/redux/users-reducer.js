@@ -4,7 +4,6 @@ const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
-const SET_PAGINATION_RANGE = 'SET_PAGINATION_RANGE';
 
 let initialState = {
     users: [],
@@ -48,11 +47,6 @@ const usersReducer = (state = initialState, action) => {
         case TOGGLE_IS_FETCHING: {
             return {...state, isFetching: action.isFetching}
         }
-        case SET_PAGINATION_RANGE{
-            return {...state, paginationRange: action.paginationRange
-            }
-        }
-        default:
             return state;
     }
     return state;
@@ -64,6 +58,5 @@ export const setUsers = (users) => ({type: SET_USERS, users});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setUsersTotalCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count:totalUsersCount});
 export const ToggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
-export const SetPaginationRange = (pagination) => ({type: SET_PAGINATION_RANGE, isFetching});
 
 export default usersReducer;

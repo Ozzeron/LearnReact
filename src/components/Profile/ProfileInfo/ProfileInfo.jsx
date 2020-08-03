@@ -9,6 +9,10 @@ const ProfileInfo = (props) => {
     return (
         <div  className={profiles.content}>
             <img id="header-image" src="https://picsum.photos/id/510/1200/400" alt=""/>
+            <div>
+                <iframe
+    src="https://calendar.google.com/calendar/embed?src=5pecpd7gplbdm70vp2m9qpcbp0%40group.calendar.google.com&ctz=Europe%2FKiev"
+    /></div>
             <div className={profiles.descriptionBlock}>
                 <img src={(props.profile.photos)?props.profile.photos.large:'/images/user.png'} alt=""/>
                 <div>Full name: {props.profile.fullName}</div>

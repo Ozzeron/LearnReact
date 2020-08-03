@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {
     follow,
-    setCurrentPage, SetPaginationRange,
+    setCurrentPage,
     setUsers,
     setUsersTotalCount,
     ToggleIsFetching,
@@ -48,6 +48,9 @@ class UsersContainer extends React.Component {
                    onPageChanged={this.onPageChanged}
                    unfollow={this.props.unfollow}
                    follow={this.props.follow}
+                   SetPaginationRangeNext={this.props.SetPaginationRangeNext}
+                   SetPaginationRangePrev={this.props.SetPaginationRangePrev}
+                   paginationRange={this.props.paginationRange}
             />
         </>
     }
@@ -89,4 +92,4 @@ let mapStateToProps = (state) => {
 // };
 
 export default connect(mapStateToProps,
-    {follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, ToggleIsFetching, SetPaginationRange})(UsersContainer);
+    {follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, ToggleIsFetching})(UsersContainer);
